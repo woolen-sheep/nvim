@@ -88,7 +88,7 @@ opt.lazyredraw = true
 opt.signcolumn = "yes:1"
 
 -- enable all the mouse functionality
-opt.mouse = "a"
+-- opt.mouse = "a"
 
 -- use indent as the fold method
 opt.foldmethod = "indent"

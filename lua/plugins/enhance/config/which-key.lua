@@ -85,6 +85,7 @@ return function()
       f = { "Format current buffer" },
       S = { "Split current line to multiple line" },
       J = { "Join multiple line into one line" },
+      R = { "View References" },
     },
     ["<space>"] = {
       e = { "Toggle Easy Align" },
