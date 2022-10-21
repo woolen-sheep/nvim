@@ -61,15 +61,17 @@ local lsp_keymap = function(client, bufnr)
   -- Set some keybinds conditional on server capabilities
   -- 0.8.0
   if vim.fn.has("nvim-0.8.0") == 1 then
-    if client.server_capabilities.documentFormattingProvider then
-      bnmap("gf", function()
-        vim.lsp.buf.format({ async = true })
-      end)
-    elseif client.server_capabilities.documentRangeFormattingProvider then
-      bmap("x", "gf", function()
-        vim.lsp.buf.range_formatting()
-      end)
-    end
+    -- Remove the condition here because cases like:
+    -- Python is using pyright-langserver, however pyright does not
+    -- support formatting. So I use efm-langserver as a workaround.
+    -- efm will handle the formatting but documentFormattingProvider
+    -- will still be false.
+    bnmap("gf", function()
+      vim.lsp.buf.format({ async = true })
+    end)
+    bmap("x", "gf", function()
+      vim.lsp.buf.range_formatting()
+    end)
 
     -- 0.6.0 - 0.7.0
   else

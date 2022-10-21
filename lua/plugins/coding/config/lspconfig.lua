@@ -6,6 +6,22 @@ if not present then
   return
 end
 
+lspconfig.efm.setup {
+    init_options = {documentFormatting = true},
+    filetypes = {"lua","python"},
+    settings = {
+        rootMarkers = {".git/"},
+        languages = {
+            lua = {
+                {formatCommand = "lua-format -i", formatStdin = true}
+            },
+            python = {
+                {formatCommand = "black --quiet -", formatStdin = true}
+            }
+        }
+    }
+}
+
 -- Gets a new ClientCapabilities object describing the LSP client
 -- capabilities.
 local capabilities = vim.lsp.protocol.make_client_capabilities()
