@@ -53,6 +53,7 @@ local my_config = {
         },
       }, -- <- same as above
     },
+    { "yaml", "yamlls" },
   },
 
   -- configuration for null-ls lsp injection
