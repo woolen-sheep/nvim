@@ -136,6 +136,7 @@ local default = {
       "bash",
       "gitcommit",
       "gitignore",
+      "go",
       "html",
       "javascript",
       "json",
@@ -149,10 +150,14 @@ local default = {
       "vim",
     },
   },
-  neovide = {
+ neovide = {
     font = { "agave Nerd Font Mono:h11" },
     transparency = 0.9,
     vfx_mode = "sonicboom",
+  },
+  go = {
+    enable = true,
+    server = "gopls",
   },
   -- override lua lsp settings
   lua = {
